@@ -1,0 +1,9 @@
+body
+{
+    overflow-x: hidden;
+}
+
+.radius-0
+{
+    border-radius: 0;
+}
