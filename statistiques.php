@@ -27,6 +27,8 @@
 				while ($row=$stmt->fetch()) {
 					extract($row);
 
+					// $nom = $row['nom']
+
 					$arr_nom[]=$nom;
 					$arr_note1[]=$note1;
 					$arr_note2[]=$note2;

@@ -32,6 +32,10 @@ if(isset($_POST["query"]))
 			<td><?php echo $row->note2 ?></td>
 			<td><?php echo $row->moyenne ?></td>
 			<td><?php echo $row->date_de_naissance ?></td>
+			<td>
+                <img style="width: 70px;height: 70px"
+                     src="upload/profile/<?php echo $row->img ?>" alt="img profile">
+            </td>
 			<td><?php echo $row->created_at ?></td>
 			<td>
 				<a href="modifier.php?id=<?php echo $row->id ?>"
@@ -46,6 +50,7 @@ if(isset($_POST["query"]))
 				   class="btn btn-success text-white mt-1">
 					<i class="fas fa-eye"></i>
 				</a>
+
 			</td>
 		</tr>
 		<?php

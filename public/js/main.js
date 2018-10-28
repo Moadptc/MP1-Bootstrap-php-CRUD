@@ -25,3 +25,31 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
     event.preventDefault();
     $(this).ekkoLightbox();
 });
+
+
+
+$(document).ready(function (){
+
+
+    // Caching the scroll top element
+    var scrollButton = $('#scroll-top');
+
+    $(window).scroll(function ()
+    {
+
+        // console.log( $(this).scrollTop() );
+
+        if( $(this).scrollTop() >= 500 ){
+            scrollButton.show();
+        }else{
+            scrollButton.hide();
+        }
+
+    });
+
+    // click on button scroll to top
+    scrollButton.click(function (){
+        $("html,body").animate({ scrollTop : 0 }, 1000);
+    });
+
+});

@@ -7,3 +7,40 @@ body
 {
     border-radius: 0;
 }
+
+
+/*----- start scroll to top -----*/
+
+#scroll-top
+{
+    width : 60px;
+    height : 60px;
+    border-radius : 50%;
+    text-align : center;
+    line-height : 72px;
+    color : #ddd;
+    background : #777;
+    position : fixed;
+    bottom : 10px;
+    right : 15px;
+    z-index : 9999;
+    display : none;
+    cursor : pointer;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+
+#scroll-top:hover
+{
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    color : #bbb;
+    background : #333;
+}
+
+/*----- end scroll to top -----*/

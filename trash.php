@@ -9,7 +9,12 @@
 
 
 			<div class="col-lg-12 py-3 table-section">
-				<table class="table table-bordered table-responsive-sm">
+
+                <a href="index.php" class="btn btn-light border mb-4">
+                    <i class="fas fa-arrow-left"></i> &nbsp; la liste
+                </a>
+
+                <table class="table table-bordered table-responsive-sm">
 					<thead class="thead-dark">
 					<tr>
 						<th scope="col">#</th>
@@ -66,9 +71,10 @@ if(isset($_POST['restore'])):
 	$note2 = $row->note2;
 	$moyenne = $row->moyenne;
 	$date_de_naissance = $row->date_de_naissance;
+	$img = $row->img;
 
 
-	$etudiant->ajouterEtudiant($nom,$prenom,$email,$password,$note1,$note2,$moyenne,$date_de_naissance);
+	$etudiant->ajouterEtudiant($nom,$prenom,$email,$password,$note1,$note2,$moyenne,$date_de_naissance,$img);
 
 	$etudiant->restoreTrash($id);
 

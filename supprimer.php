@@ -10,7 +10,7 @@
 			<div class="col-lg-12 py-3 table-section">
 
                 <div class="alert alert-danger font-weight-bold">
-                    Are you sure
+                    Voulez-vous Vraimant Supprimer l element
                 </div>
 
 				<table class="table table-bordered table-responsive-sm">
@@ -86,9 +86,10 @@ if(isset($_POST['delete'])):
 	$note2 = $row['note2'];
 	$moyenne = $row['moyenne'];
 	$date_de_naissance = $row['date_de_naissance'];
+	$img = $row['img'];
 
 
-	$etudiant->ajouterEtudiantTrash($nom,$prenom,$email,$password,$note1,$note2,$moyenne,$date_de_naissance);
+	$etudiant->ajouterEtudiantTrash($nom,$prenom,$email,$password,$note1,$note2,$moyenne,$date_de_naissance,$img);
 
 	$etudiant->delete($id);
 

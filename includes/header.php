@@ -37,13 +37,25 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="index.php">
+                        <i class="fas fa-home"></i>
+                        ACCUEIL
+                        <span class="sr-only">(current)</span></a>
 				</li>
 
 			</ul>
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="logout.php">Deconnecter</a>
+					<a class="nav-link mx-2" href="parametres_profile.php">
+                        <i class="fas fa-user-alt"></i>
+                        <?php echo $_SESSION['prenom'] ?>
+                    </a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link btn btn-primary btn-sm" href="logout.php">
+                        Deconnecter
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
 				</li>
 
 			</ul>

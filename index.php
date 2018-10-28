@@ -18,6 +18,15 @@
                 <a href="statistiques.php" class="btn btn-success mt-2">
                    <i class="fas fa-chart-area"></i> Statistiques
                 </a>
+
+                <a href="config.php" class="btn btn-danger mt-2">
+                   <i class="fas fa-cogs"></i> Configurations
+                </a>
+
+                <a href="parametres_profile.php" class="btn btn-dark text-white mt-2">
+                   <i class="fas fa-user-cog"></i> parametres de profile
+                </a>
+
             </div>
 
             <div class="col-lg-12 mt-2">
@@ -53,15 +62,13 @@
                         <th>Note 2</th>
                         <th>Moyenne</th>
                         <th>Date de Naissance</th>
+                        <th>image</th>
                         <th>Date de Creation</th>
                         <th scope="col">Actions</th>
                     </tr>
                     </thead>
                     <tbody id="result">
-
-
-
-
+                        <!--  fetch data  -->
                     </tbody>
                 </table>
 

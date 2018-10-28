@@ -18,6 +18,10 @@ endif;
 
 				<div class="col-lg-12 py-3 table-section">
 
+                    <a href="index.php" class="btn btn-light border mb-4">
+                        <i class="fas fa-arrow-left"></i> &nbsp; la liste
+                    </a>
+
 					<div class="card">
 						<div class="card-header">
 							<?= $nom . ' ' . $prenom ?>
@@ -27,6 +31,10 @@ endif;
 								Les Informations d'etudiant
 							</h5>
 							<div class="card-text">
+								<p class="float-left mr-3">
+                                    <img style="width:300px; height: 300px" class="img-thumbnail"
+                                         src="upload/profile/<?= $img ?>" alt="profile pic">
+								</p>
 								<p>
 									<span class="font-weight-bold">Email : </span>
 									<?= $email ?>

@@ -22,20 +22,15 @@ class Etudiant {
 
 
     // inserer etudiant
-	public function ajouterEtudiant($nom,$prenom,$email,$password,$note1,$note2,$moyenne,$date_de_naissance)
+	public function ajouterEtudiant($nom,$prenom,$email,$password,$note1,
+        $note2,$moyenne,$date_de_naissance,$img)
     {
 
-	    $this->nom = $nom;
-	    $this->prenom = $prenom;
-	    $this->email = $email;
-	    $this->password = $password;
-	    $this->note1 = $note1;
-	    $this->note2 = $note2;
-	    $this->moyenne = $moyenne;
 
 	    $stmt = $this->db_conn->
         prepare("insert into etudiant
-                      values('',:nom,:prenom,:email,:password,:note1,:note2,:moyenne,:date_de_naissance
+                      values('',:nom,:prenom,:email,:password,:note1,:note2,:moyenne,
+                      :date_de_naissance,:img
                       ,CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP())");
 
 	    $stmt->bindparam(':nom',$nom);
@@ -46,18 +41,19 @@ class Etudiant {
 	    $stmt->bindparam(':note2',$note2);
 	    $stmt->bindparam(':moyenne',$moyenne);
 	    $stmt->bindparam(':date_de_naissance',$date_de_naissance);
+	    $stmt->bindparam(':img',$img);
 
 	    $stmt->execute();
 	    return true;
     }
 
     // inserer etudiant trash
-	public function ajouterEtudiantTrash($nom,$prenom,$email,$password,$note1,$note2,$moyenne,$date_de_naissance)
+	public function ajouterEtudiantTrash($nom,$prenom,$email,$password,$note1,$note2,$moyenne,$date_de_naissance,$img)
     {
 
 	    $stmt = $this->db_conn->
         prepare("insert into trash
-                      values('',:nom,:prenom,:email,:password,:note1,:note2,:moyenne,:date_de_naissance
+                      values('',:nom,:prenom,:email,:password,:note1,:note2,:moyenne,:date_de_naissance,:img
                       ,CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP())");
 
 	    $stmt->bindparam(':nom',$nom);
@@ -68,6 +64,7 @@ class Etudiant {
 	    $stmt->bindparam(':note2',$note2);
 	    $stmt->bindparam(':moyenne',$moyenne);
 	    $stmt->bindparam(':date_de_naissance',$date_de_naissance);
+	    $stmt->bindparam(':img',$img);
 
 	    $stmt->execute();
 	    return true;
@@ -174,6 +171,10 @@ class Etudiant {
 				<td><?php echo $row->note2 ?></td>
 				<td><?php echo $row->moyenne ?></td>
 				<td><?php echo $row->date_de_naissance ?></td>
+                <td>
+                    <img style="width: 70px;height: 70px"
+                         src="upload/profile/<?php echo $row->img ?>" alt="img profile">
+                </td>
 				<td><?php echo $row->created_at ?></td>
 				<td>
                     <a href="modifier.php?id=<?php echo $row->id ?>"
@@ -247,7 +248,7 @@ class Etudiant {
 		    $password = $_POST['password'];
 
 
-		    $stmt = $this->db_conn-> prepare("SELECT * FROM etudiant
+		    $stmt = $this->db_conn-> prepare("SELECT * FROM admin
                                       WHERE
                                       email = :email AND password = :password
                                       LIMIT 1");
@@ -291,6 +292,25 @@ class Etudiant {
     }
 
 
+   /* public function retour()
+    {
+	    if(isset($_SERVER['HTTP_REFERER'])) {
+		    echo $_SERVER['HTTP_REFERER'];
+	    }
+	    else
+	    {
+		    echo $_SERVER['HTTP_REFERER'];
+	    }
+    }*/
+
+
+
+
+
+
 }
+
+
+
 
 $etudiant = new Etudiant($db);
