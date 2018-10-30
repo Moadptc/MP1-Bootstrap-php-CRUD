@@ -126,9 +126,6 @@ $row = $stmt->fetch();
 	</section>
 
 
-
-<?php include 'includes/footer.php'; ?>
-
 <?php
 
 if(isset($_POST['edit_logo']))
@@ -208,3 +205,6 @@ header
 
 
 ?>
+
+
+<?php include 'includes/footer.php'; ?>
